@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thực hành - chuyển đổi nhiệt độ</title>
+</head>
+<body>
+    <h1>Temperature Converter</h1>
+    <p>Type a value in the Fehrenheit field to convert the value to Calcius:</p>
+    <label for="FehTemp">Fahrenheit:</label><input type="number" id="FehTemp" onchange="tempConvert()">
+    <hr>
+    <span>Celcius:</span><span id="result"></span>
+    <script>
+        function tempConvert(){
+            let inputNum = +document.querySelector("#FehTemp").value;
+            let celNum = (inputNum - 32) / 1.8;
+            document.querySelector("#result").innerHTML = celNum.toFixed(2);
+        }
+    </script>
+</body>
+</html>
